@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 
+
 const Home = ({ navigation }) => {
 
     const [coin, setcoin] = useState([]);
@@ -17,9 +18,6 @@ const Home = ({ navigation }) => {
         navigation.navigate('CoinDetails');
     }
 
-    const getId = ()=>{
-
-    }
 
     return ( 
         <View style={styles.container}>

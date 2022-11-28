@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { StyleSheet, FlatList, Text, View } from "react-native";
 import axios from "axios";
+import coinId from './home'
 
 const CoinDetails = ({navigation}) => {
 
@@ -12,7 +13,7 @@ const CoinDetails = ({navigation}) => {
     });
 
     useEffect(()=>{
-        axios.get(`https://api.coinlore.net/api/ticker/?id=${90}`).then((promise)=>{
+        axios.get(`https://api.coinlore.net/api/ticker/?id=${coinId}`).then((promise)=>{
             setCoinDet({
                 Name: promise.data[0].name,
                 price_usd: promise.data[0].price_usd,
