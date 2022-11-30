@@ -1,34 +1,13 @@
-import { useState, useEffect } from "react";
-import { StyleSheet, FlatList, Text, View } from "react-native";
-import axios from "axios";
-import coinId from './home'
+import { StyleSheet, Text, View } from "react-native";
 
 const CoinDetails = ({navigation}) => {
 
-    const [coinDet, setCoinDet] = useState({
-        Name: "",
-        price_usd: "",
-        price_btc:"",
-        volume24:0
-    });
-
-    useEffect(()=>{
-        axios.get(`https://api.coinlore.net/api/ticker/?id=${coinId}`).then((promise)=>{
-            setCoinDet({
-                Name: promise.data[0].name,
-                price_usd: promise.data[0].price_usd,
-                price_btc:promise.data[0].price_btc,
-                volume24:promise.data[0].volume24
-            });
-        })
-    },[]);
-
     return ( 
         <View>
-            <Text>Name: {coinDet.Name}</Text>
-            <Text>price_usd: ${coinDet.price_usd}</Text>
-            <Text>price_btc: {coinDet.price_btc}</Text>
-            <Text>Volume in last 24hrs: {coinDet.volume24}</Text>
+            <Text style={styles.text}>Name: {navigation.getParam('name')}</Text>
+            <Text style={styles.text}>price is usd: ${navigation.getParam('price_usd')}</Text>
+            <Text style={styles.text}>price in Bitcoin: {navigation.getParam('price_btc')}</Text>
+            <Text style={styles.text}>% Change in 24hrs: {navigation.getParam('percent_change_24h')}%</Text>
         </View>
      );
 }
@@ -50,6 +29,9 @@ const styles = StyleSheet.create({
     text:{
         fontWeight:'bold',
         color:'gray',
+        fontSize: 24,
+        marginTop:8,
+        marginHorizontal:10,
     }
 })
 

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 
 
 const Home = ({ navigation }) => {
@@ -14,17 +13,13 @@ const Home = ({ navigation }) => {
         })
     },[]);
 
-    const pressHandler = ()=>{
-        navigation.navigate('CoinDetails');
-    }
-
 
     return ( 
         <View style={styles.container}>
             <FlatList
                 data={coin}
                 renderItem={({ item })=>(
-                    <TouchableOpacity onPress={pressHandler}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('CoinDetails', item)}>
                         <View style={styles.view}>
                             <Text style={styles.text}>{item.symbol}</Text>
                             <Text style={styles.text}>Price: ${item.price_usd}</Text>
