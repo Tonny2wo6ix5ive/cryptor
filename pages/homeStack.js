@@ -6,12 +6,25 @@ import CoinDetails from "./coinDetails";
 
 const screens = {
     Home:{
-        screen: Home
+        screen: Home,
+        navigationOptions:{
+            title:'All Coins'
+        }
     },
     CoinDetails:{
-        screen: CoinDetails
+        screen: CoinDetails,
+        navigationOptions:{
+            title:'Coin Details'
+        }
     },
 }
-const HomeStack = createStackNavigator(screens);
+const HomeStack = createStackNavigator(screens, {
+    defaultNavigationOptions:{
+        headerTintColor:'dodgerblue',
+        headerStyle:{
+            backgroundColor:'#000'
+        }
+    }
+});
 
 export default createAppContainer(HomeStack);

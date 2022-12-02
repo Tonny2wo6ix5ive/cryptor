@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
                 renderItem={({ item })=>(
                     <TouchableOpacity onPress={()=>navigation.navigate('CoinDetails', item)}>
                         <View style={styles.view}>
-                            <Text style={styles.text}>{item.symbol}</Text>
+                            <Text style={styles.text}>{item.name}</Text>
                             <Text style={styles.text}>Price: ${item.price_usd}</Text>
                             <Text style={styles.text}>Rank: {item.rank}</Text>                            
                         </View>
@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'white'
+        backgroundColor:'#0c0c49'
     },
     view:{
         flex:1,
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     },
     text:{
         fontWeight:'bold',
-        color:'gray',
+        color:'#ffffff',
+        fontFamily:'monospace'
     }
 })
 
