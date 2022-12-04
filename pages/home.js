@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
         marginHorizontal:10,
         marginTop: 8,
         borderBottomWidth: 1,
-        borderBottomColor: 'gray',
-        display:'flex',
-        alignItems:'stretch',
+        borderBottomColor: '#c0c0c0',
+        paddingVertical:10,
     },
     text:{
+
         fontWeight:'bold',
-        color:'#ffffff',
+        color:'#c0c0c0',
         fontFamily:'monospace'
     }
 })

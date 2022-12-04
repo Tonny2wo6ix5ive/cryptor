@@ -18,15 +18,15 @@ const CoinDetails = ({navigation}) => {
                     <Text style={styles.CoinListDet}>{navigation.getParam('price_btc')}</Text>
                 </View>
                 <View style={styles.coinContainer}>
-                    <Text style={styles.CoinList}>% change in 1hr</Text>
-                    <Text style={styles.CoinListDet}>{navigation.getParam('percent_change_1h')}</Text>
+                    <Text style={styles.CoinList}>Price Change in 1hr</Text>
+                    <Text style={styles.CoinListDet}>{navigation.getParam('percent_change_1h')}%</Text>
                 </View>
                 <View style={styles.coinContainer}>
-                    <Text style={styles.CoinList}>% change in 24hrs</Text>
-                    <Text style={styles.CoinListDet}>{navigation.getParam('percent_change_24h')}</Text>
+                    <Text style={styles.CoinList}>Price Change in 24hrs</Text>
+                    <Text style={styles.CoinListDet}>{navigation.getParam('percent_change_24h')}%</Text>
                 </View>
                 <View style={styles.coinContainer}>
-                    <Text style={styles.CoinList}>% Change in 7d</Text>
+                    <Text style={styles.CoinList}>Market Cap ($)</Text>
                     <Text style={styles.CoinListDet}>{navigation.getParam('market_cap_usd')}</Text>
                 </View>
             </View>
@@ -53,12 +53,14 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color:'#0c0c49',
         fontSize: 24,
+        fontFamily:'monospace',
         marginTop:8,
         marginHorizontal:10,
     },
     viewContainer:{
-        marginHorizontal:30,
+        marginHorizontal:20,
         marginTop:30,
+        fontFamily:'monospace'
     },
     coinContainer:{
         display:'flex',
@@ -70,12 +72,14 @@ const styles = StyleSheet.create({
     },
     CoinList:{
         color:'#c0c0c0',
-        width:120,
+        width:180,
+        fontFamily:'monospace'
     },
     CoinListDet:{
         color:'#c0c0c0',
-        width:170,
+        width:130,
         textAlign:'right',
+        fontFamily:'monospace'
     }
 })
 
