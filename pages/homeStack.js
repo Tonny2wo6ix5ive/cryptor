@@ -8,7 +8,7 @@ const screens = {
     Home:{
         screen: Home,
         navigationOptions:{
-            title:'All Coins'
+            title:'Home'
         }
     },
     CoinDetails:{
